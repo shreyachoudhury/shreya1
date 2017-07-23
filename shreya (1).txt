@@ -1,0 +1,125 @@
+CREATE DATABASE student_db;
+CREATE DATABASE employee_db;
+CREATE DATABASE production_db;
+USE student;
+CREATE TABLE personal_details
+  (
+  last_name VARCHAR(15) NOT NULL,
+  first_name VARCHAR(15) NOT NULL,
+  sex VARCHAR(1) NULL,
+  city VARCHAR(20) NOT NULL,
+  state VARCHAR(2) NOT NULL,
+  age int
+  );
+SHOW FIELDS FROM personal_details;
+USE employee;
+CREATE TABLE personal_details
+  (
+  last_name VARCHAR(15) NOT NULL,
+  first_name VARCHAR(15) NOT NULL,
+  sex VARCHAR(1) NULL,
+  city VARCHAR(20) NOT NULL,
+  state VARCHAR(2) NOT NULL,
+  age int
+  );
+SHOW FIELDS FROM personal_details;
+DROP TABLE personal_details;
+USE production;
+CREATE TABLE movie
+  (
+  name VARCHAR(100) NOT NULL,
+  budget long
+  actor VARCHAR(20) NULL,
+  actress VARCHAR(20) NULL,
+  release_date VARCHAR(20)
+  );
+SHOW FIELDS FROM movie;
+ALTER TABLE movie drop release_date;
+
+CREATE DATABASE company_db;
+USE company;
+CREATE TABLE employee
+  (
+  last_name VARCHAR(15) NOT NULL,
+  first_name VARCHAR(15) NOT NULL,
+  field_id VARCHAR(15) NOT NULL PRIMARY KEY,
+  sex VARCHAR(1) NULL,
+  city VARCHAR(20) NOT NULL,
+  state VARCHAR(2) NOT NULL,
+  age int
+  );
+SHOW FIELDS FROM employee;
+
+CREATE DATABASE student_db;
+USE student;
+CREATE TABLE personal_details
+  (
+  last_name VARCHAR(15) NOT NULL,
+  first_name VARCHAR(15) NOT NULL,
+  sex VARCHAR(1) NULL,
+  city VARCHAR(20) NOT NULL,
+  state VARCHAR(2) NOT NULL,
+  age int
+  );
+INSERT INTO personal_details VALUES('deshpande','aniruddh','m','vadodra','gujarat',55);
+INSERT INTO personal_details VALUES('deshpande','aniruddh','m','vadodra','gujarat',55);
+INSERT INTO personal_details VALUES('deshpande','aniruddh','m','vadodra','gujarat',55);
+SELECT COUNT(*) FROM personal_details;
+SELECT DISTINCT (first_name)FROM personal_details;
+SHOW FIELDS FROM personal_details;
+
+CREATE DATABASE company_db;
+USE company;
+CREATE TABLE employee
+  (
+  name VARCHAR(15) NOT NULL,
+  salary long,
+  address VARCHAR(20) NOT NULL,
+  age int,
+  id int
+  );
+SHOW FIELDS FROM employee;
+INSERT INTO employee VALUES('Ramesh','32','Ahmedabad','2000');
+INSERT INTO employee VALUES('Khilan','25','Delhi','1500');
+INSERT INTO employee VALUES('kaushik','23','Kota','2000');
+INSERT INTO employee VALUES('Chaitali','25','Mumbai','6500');
+INSERT INTO employee VALUES('Hardik','27','Bhopal','8500');
+INSERT INTO employee VALUES('Komal','22','MP','4500');
+INSERT INTO employee VALUES('Muffy','24','Indore','10000');
+UPDATE employee SET address='Maharashtra' WHERE name='Komal';
+
+CREATE TABLE student
+  (
+  id int,
+  name VARCHAR(20) NOT NULL,
+  age int
+  );
+INSERT INTO TABLE student VALUES('1','Vinodini','25');
+INSERT INTO TABLE student VALUES('2','Banu','27');
+INSERT INTO TABLE student VALUES('3','kaushik','23');
+INSERT INTO TABLE student VALUES('4','Praveen', '25');
+INSERT INTO TABLE student VALUES('5','Kamal','22');
+INSERT INTO TABLE student VALUES('6','Malini','24');
+INSERT INTO TABLE student VALUES('7','Ramesh','32');
+SELECT * FROM TABLE student WHERE age=32 or age=22;
+
+CREATE DATABASE company_db;
+USE company;
+CREATE TABLE employee
+  (
+  name VARCHAR(15) NOT NULL,
+  salary long,
+  address VARCHAR(20) NOT NULL,
+  age int,
+  id int NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY(id)
+  );
+SHOW FIELDS FROM employee;
+INSERT INTO employee VALUES('Ramesh','32','Ahmedabad','2000');
+INSERT INTO employee VALUES('Khilan','25','Delhi','1500');
+INSERT INTO employee VALUES('kaushik','23','Kota','2000');
+INSERT INTO employee VALUES('Chaitali','25','Mumbai','6500');
+INSERT INTO employee VALUES('Hardik','27','Bhopal','8500');
+INSERT INTO employee VALUES('Komal','22','MP','4500');
+INSERT INTO employee VALUES('Muffy','24','Indore','10000');
+SELECT * FROM employee
